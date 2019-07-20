@@ -124,6 +124,7 @@ PreferencesFx preferencesFx =
             Setting.of("Setting title 2", booleanProperty) // which contains both settings
         ),
         Category.of("Category title 2")
+            .expand()                                       // Expand the parent category in the tree-view
             .subCategories( // adds a subcategory to "Category title 2"
                 Category.of("Category title 3",
                     Group.of("Group title 1",
@@ -166,6 +167,7 @@ The following parameters are optionally available to further configure the dialo
 Method | Class | Description
 ------ | ----- | -----------
 `.subCategories` | `Category` | Subcategories allow a `Category` to have additional subcategories as children. Those are also displayed in the tree.
+`.expand` | `Category` | Allows to specify if the `Category` should be expanded in the Tree-View by default.
 `.description` | `Group` | If you decide not to add the description of a group in the constructor, you can still add it after the creation of the group.
 `.validate` | `Setting` | Allows to add a [Validator](http://dlsc.com/wp-content/html/formsfx/apidocs/com/dlsc/formsfx/model/validators/Validator.html) to a setting, to set constraints to the values that can be entered.
 `.persistApplicationState` | `PreferencesFx` | Defines if the Preferences API should save the application states. This includes the state persistence of the dialog window, as well as the values of each Setting.
@@ -173,6 +175,7 @@ Method | Class | Description
 `.saveSettings` | `PreferencesFx` | Defines whether the changed settings in the Preferences window should be saved or not. Defaults to true.
 `.debugHistoryMode` | `PreferencesFx` | Makes it possible to enable or disable the keycombination to open a debug view of the list of all actions in the history (undo / redo). Pressing Ctrl + Shift + H (Windows) or CMD + Shift + H (Mac) opens a dialog with the undo / redo history, shown in a table. Defaults to false.
 `.buttonsVisibility` | `PreferencesFx` | Sets the visibility of the cancel and close buttons in the `PreferencesFxDialog`. Defaults to true.
+`.instantPersistent` | `PreferencesFx` | If set to true, it will instantly apply any changes that are being made in the `PreferencesFxDialog`. If set to false, it will only apply changes when the `Save` button is pressed. Defaults to true.
 `.i18n` | `PreferencesFx` | Sets the translation service of the preferences dialog for internationalization.
 `.dialogTitle` | `PreferencesFx` | Allows to specify a custom dialog title.
 `.dialogIcon` | `PreferencesFx` | Allows to specify a custom dialog icon.
