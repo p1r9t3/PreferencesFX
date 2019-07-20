@@ -4,8 +4,8 @@ import static com.dlsc.preferencesfx.util.Constants.BREADCRUMB_DELIMITER;
 
 import com.dlsc.formsfx.model.util.TranslationService;
 import com.dlsc.preferencesfx.util.PreferencesFxUtils;
+import com.dlsc.preferencesfx.util.Strings;
 import com.dlsc.preferencesfx.view.CategoryView;
-import com.google.common.base.Strings;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -265,7 +265,12 @@ public class Category {
     return itemIcon;
   }
 
-  public boolean autoExpand() {
+  /**
+   * Gets the property whether to auto-expand the Category or not.
+   *
+   * @return  the property showing if Category should be expanded or not
+   */
+  public boolean isExpand() {
     return expand;
   }
 }
